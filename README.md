@@ -43,7 +43,8 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
 「flow.cloudant.dbname」の値に任意の英数字を入力し、「完了」ボタンをクリックします。  
 ※「flow.cloudant.dbname」の値はTwitterから収集したデータと、それの分類結果を格納するデータベース名となります。
 
-画像
+![cloudant_credentials1](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials1.png)  
+![cloudant_credentials2](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials2.png)
 
 8. Twitterアカウントの設定  
 「SBAnalyzer」タブの「ツイート収集」ノードをダブルクリックし、「Twitter ID」横のプルダウンから「新規にtwitter-credentialsを追加」を選択し、横の鉛筆ボタンをクリックします。  
