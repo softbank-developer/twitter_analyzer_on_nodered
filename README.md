@@ -8,8 +8,6 @@ IBM BluemixのNode-RED上でTwitterから特定キーワードでTweetを収集�
 - 分類結果の累計カウント数・比率を円グラフで表示
 - 分類したTweetの内訳を特定の日、時、分を指定して表示(日のみ、日時のみ指定も可)
 
-![data](https://github.com/)
-
 
 ## 利用条件
 - **Bluemix account** を持っていること(IBM Watson NLC、Node-RED用)
