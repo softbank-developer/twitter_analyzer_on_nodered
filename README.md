@@ -76,4 +76,4 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
 
 ## License
 
-[MIT](http://)
+[MIT](twitter_analyzer_on_nodered/LICENSE)
