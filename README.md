@@ -21,20 +21,16 @@ IBM BluemixのNode-RED上でTwitterから特定キーワードでTweetを収集�
 2. Node-REDにIBM Watson NLCを接続  
 接続タブから「新規に接続」を選択して、新規にNLCを作成するか、「既存に接続」を選択して既存のNLCを選択します。
 
-3. 分類器を作成  
-Node-REDに接続したNLCにポジティブ・ネガティブ分類器、BOT判断分類器、感情分類器を作成します。  
-学習用サンプルデータは～～～にあります。
-
-4. Node-REDの初期設定  
+3. Node-REDの初期設定  
 Node-REDのアプリURLにアクセスし、画面の指示に従ってエディタ画面で使うユーザ名、パスワードなどを設定します。
 
-5. 「node-red-dashboard」を追加  
+4. 「node-red-dashboard」を追加  
 フローエディタ画面右上のメニューから「パレットの管理」をクリックし、「ノードを追加」タブで「node-red-dashboard」を検索し、「node-red-dashboard」の「ノードを追加」ボタンをクリックします。
 
-6. フローの読み込み  
+5. フローの読み込み  
 フローエディタ画面右上のメニューから「読み込み」->「クリップボード」とクリックし、テキストエリアに「---.json」の内容をコピーし、貼り付けます。
 
-7. Cloudantの初期設定  
+6. Cloudantの初期設定  
 Node-REDのBluemix Cloud Foundry アプリ管理コンソールの接続タブからCloudantの資格情報を表示し、urlをコピーします。  
 Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Cloudant設定」ノードをダブルクリックします。  
 「flow.cloudant.url」の値に先ほどコピーしたurlを貼り付けます。  
@@ -44,21 +40,32 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
 ![cloudant_credentials1](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials1.png)  
 ![cloudant_credentials2](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials2.png)
 
-8. Twitterアカウントの設定  
+7. Twitterアカウントの設定  
 「SBAnalyzer」タブの「ツイート収集」ノードをダブルクリックし、「Twitter ID」横のプルダウンから「新規にtwitter-credentialsを追加」を選択し、横の鉛筆ボタンをクリックします。  
 その後、画面の指示に従ってTwitterアカウントの認証を行い、「追加」、「完了」ボタンをクリックします。
 
-9. 分類器IDの設定  
-「SBAnalyzer」タブの「NLC:ポジネガ判定」「NLC:BOT判断」「NLC:感情分類」ノードに「Classifier ID」を設定し、「完了」ボタンをクリックします。
+8. Cloudantバインド設定の反映  
+「SBAnalyzer」タブの「ツイート情報登録」ノードをダブルクリックし、「Service」に「Node-REDのアプリ名+cloudantNoSQLDB」が表示されることを確認し、「完了」ボタンをクリックします。  
+「完了」ボタンをクリックすると、ノードの右上に青い丸がつきます。  
+同様に「分類器管理」タブの全てのCloudantノードを右上に青い丸がついた状態にします。  
+![cloudant_node](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_node.png)
 
-10. Cloudantバインド設定の反映  
-「SBAnalyzer」タブの「ツイート情報登録」ノードをダブルクリックし、「Service」に「Node-REDのアプリ名+cloudantNoSQLDB」が表示されることを確認し、「完了」ボタンをクリックします。
-
-11. デプロイ  
+9. デプロイ  
 フローエディタ画面右上の「デプロイ」ボタンをクリックします。
 
-12. Database・View作成  
+10. Database・View作成  
 「Cloudant初期設定」タブで「Database作成」「view作成」ノードの左に付いているボタンをクリックします。
+
+11. 分類器を作成  
+「分類器管理」タブでそれぞれの「学習データをセットしてクリック」ノードの左に付いているボタンをクリックして、ポジティブ・ネガティブ分類器、BOT判断分類器、感情分類器を作成します。
+
+12. 分類器IDの設定  
+「分類器管理」タブで「分類器情報の確認」ノードの左に付いているボタンをクリックします。  
+デバッグタブに出力されたnameが「posinega」(ポジネガ判定)、「isbot」(BOT判断)、「emotion」(感情分類)のclassifier_idをメモします。  
+「SBAnalyzer」タブの「NLC:ポジネガ判定」「NLC:BOT判断」「NLC:感情分類」ノードにメモしたclassifier_idを設定し、「完了」ボタンをクリックします。
+
+13. デプロイ  
+フローエディタ画面右上の「デプロイ」ボタンをクリックします。
 
 
 ## 使い方
