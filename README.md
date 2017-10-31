@@ -47,7 +47,7 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
 8. Cloudantバインド設定の反映  
 「SBAnalyzer」タブの「ツイート情報登録」ノードをダブルクリックし、「Service」に「Node-REDのアプリ名+cloudantNoSQLDB」が表示されることを確認し、「完了」ボタンをクリックします。  
 「完了」ボタンをクリックすると、ノードの右上に青い丸がつきます。  
-同様に「分類器管理」タブの全てのCloudantノードを右上に青い丸がついた状態にします。  
+同様に「分類器作成」、「分類器削除」タブの全てのCloudantノードを右上に青い丸がついた状態にします。  
 ![cloudant_node](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_node.png)
 
 9. デプロイ  
@@ -57,10 +57,11 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
 「Cloudant初期設定」タブで「Database作成」「view作成」ノードの左に付いているボタンをクリックします。
 
 11. 分類器を作成  
-「分類器管理」タブでそれぞれの「学習データをセットしてクリック」ノードの左に付いているボタンをクリックして、ポジティブ・ネガティブ分類器、BOT判断分類器、感情分類器を作成します。
+「分類器作成」タブで、「学習データ」ノードにNLCの学習データ形式で学習データをセットします。ポジネガ分類器のclassは「positive,neutral,negative」、BOT判断分類器のclassは「person,others」、感情分類器のclassは「喜,怒,哀,楽」を想定しています。
+それぞれの「学習データをセットしてクリック」ノードの左に付いているボタンをクリックして、ポジティブ・ネガティブ分類器、BOT判断分類器、感情分類器を作成します。
 
 12. 分類器IDの設定  
-「分類器管理」タブで「分類器情報の確認」ノードの左に付いているボタンをクリックします。  
+「分類器作成」タブで「分類器情報の確認」ノードの左に付いているボタンをクリックします。  
 デバッグタブに出力されたnameが「posinega」(ポジネガ判定)、「isbot」(BOT判断)、「emotion」(感情分類)のclassifier_idをメモします。  
 「SBAnalyzer」タブの「NLC:ポジネガ判定」「NLC:BOT判断」「NLC:感情分類」ノードにメモしたclassifier_idを設定し、「完了」ボタンをクリックします。
 
