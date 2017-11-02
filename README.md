@@ -33,15 +33,16 @@ Node-REDのアプリURLにアクセスし、画面の指示に従ってエディ
 6. Cloudantの初期設定  
 Node-REDのBluemix Cloud Foundry アプリ管理コンソールの接続タブからCloudantの資格情報を表示し、urlをコピーします。  
 Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Cloudant設定」ノードをダブルクリックします。  
-「flow.cloudant.url」の値に先ほどコピーしたurlを貼り付けます。  
-「flow.cloudant.dbname」の値に任意の英数字を入力し、「完了」ボタンをクリックします。  
-※「flow.cloudant.dbname」の値はTwitterから収集したデータと、それの分類結果を格納するデータベース名となります。
+「global.cloudant.url」の値に先ほどコピーしたurlを貼り付けます。  
+「global.cloudant.dbname」の値に任意の英数字を入力し、「完了」ボタンをクリックします。  
+※「global.cloudant.dbname」の値はTwitterから収集したデータと、それの分類結果を格納するデータベース名となります。
 
 ![cloudant_credentials1](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials1.png)  
 ![cloudant_credentials2](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/readme_images/cloudant_credentials2.png)
 
-7. Twitterアカウントの設定  
-「SBAnalyzer」タブの「ツイート収集」ノードをダブルクリックし、「Twitter ID」横のプルダウンから「新規にtwitter-credentialsを追加」を選択し、横の鉛筆ボタンをクリックします。  
+7. Twitterの設定  
+「SBAnalyzer」タブの「ツイート収集」ノードをダブルクリックし、検索条件を入力します。  
+「Twitter ID」横のプルダウンから「新規にtwitter-credentialsを追加」を選択し、横の鉛筆ボタンをクリックします。  
 その後、画面の指示に従ってTwitterアカウントの認証を行い、「追加」、「完了」ボタンをクリックします。
 
 8. Cloudantバインド設定の反映  
