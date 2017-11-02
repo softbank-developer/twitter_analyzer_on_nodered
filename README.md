@@ -83,7 +83,7 @@ Node-REDフローエディタ画面の「Cloudant初期設定」タブで「Clou
     - 指定した時間に呟かれたTweetの分類とTweet内容を表示します。  
 
 
-## License
+## ライセンス
 
 [MIT](https://github.com/softbank-developer/twitter_analyzer_on_nodered/blob/master/LICENSE)
 
